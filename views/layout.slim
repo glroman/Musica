@@ -1,0 +1,31 @@
+doctype html
+
+html
+  head
+    title = @title
+    meta name='Recordly'        content='template language'
+    meta name='GLR'             content='author'
+
+    /link rel="icon" type="image/png" href=file_path("favicon.png")
+    /javascript:
+    /  $(document).ready(function() {
+    /    $('form:first *:input[type!=hidden]:first').focus();
+    /  });
+  body
+    #logoblk
+      #logo1 Recordly
+      #logo2 My Music Collection
+
+    - if request.env['PATH_INFO'] == '/login'
+      p No menu when logging in
+    - else
+      p Menu goes here for #{request.env['PATH_INFO']}.
+
+    h1.header = @header
+
+    - if flash[:notice]
+      p(class="notice") = flash[:notice]
+
+    == yield
+
+    h6 Copyright 2016 Foo Inc, All Rights Reserved

@@ -1,0 +1,43 @@
+fieldset
+  legend Register for an Account
+
+  form(action = '/new_user' method = 'post')
+
+    label#lb-user-name(for = 'user-name')  User Name:
+
+    / TODO: sync validations between this and app code
+    input#user-name(name       = 'user'
+                    type       = 'text'
+                    autofocus
+                    size       = 13
+                    maxlength  = 12
+                    pattern    = '[A-z0-9-]{2,12}'
+                   )
+
+    br
+
+    label#lb-pwd(for = 'pwd1')  Password:
+
+    input#pwd(name      = 'pwd1'
+              type      = 'password'
+              size      = 13
+              maxlength = 12
+             )
+
+    br
+
+    label#lb-pwd(for = 'pwd2')  Reenter:
+
+    input#pwd(name      = 'pwd2'
+              type      = 'password'
+              size      = 13
+              maxlength = 12
+             )
+
+    br
+
+    p Passwords should be 8 or more characters in length
+
+    input(value = 'Register'
+          type  = 'submit'
+         )

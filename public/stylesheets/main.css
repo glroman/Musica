@@ -1,0 +1,277 @@
+/************************************************************************/
+/*                           Global styles                              */
+/************************************************************************/
+
+#banner {
+    /* font:               small-caps 50px/50px "Times New Roman", serif; */
+    font:               small-caps 40pt Georgia, serif;
+    color:              #008;
+    text-align:         center;
+    background:         #09c;
+    padding-top:        0.1em;
+    padding-bottom:     0.22em;
+    border-bottom:      4px solid #008;
+    margin:             0;
+}
+
+#banner img {
+    float:              left;
+    margin:             0 4px;
+    border:             0;
+}
+
+
+/*
+#layout
+{
+    border-collapse:    collapse;
+    background:         #ffc;
+    width:              100%;
+    padding:            0;
+}
+*/
+
+
+#sidebar {
+    text-align:         center;
+    vertical-align:     top;
+    background:         #bbb;
+    width:              13%;
+    height:             100%;
+    /*height:             5em;*/
+    /*border:             2px solid red;*/
+    float:              left;
+    /*display:            inline;*/
+    margin:             0;
+    padding:            0;
+}
+
+#sidebar a {
+    font:               11pt sans-serif;
+    color:              #063;
+}
+
+#sidebar ul {
+    text-align:         left;
+    list-style-type:    none;
+    padding:            0;
+    margin:             0;
+}
+
+#main {
+    float:              left;
+    width:              85%;
+    padding:            0 0 1em 1em;
+    border:             0;
+    /*border:             1px solid red;*/
+    border-left:        4px solid #008;
+    margin:             0;
+    background:         #ffc;
+}
+
+
+#footer {
+    text-align:         center;
+    clear:              both;
+    background:         #eee;
+    border-top:         4px solid #008;
+    font:               normal smaller sans-serif;
+}
+
+#notice {
+    font:               bold smaller sans-serif;
+    background-color:   #eee;
+    border:             2px solid red;
+    padding:            1em;
+    margin-bottom:      2em;
+}
+
+#errorExplanation {
+  width:                400px;
+  border:               2px solid red;
+  padding:              7px;
+  padding-bottom:       12px;
+  margin-bottom:        20px;
+  background-color:     #eee;
+}
+
+#errorExplanation h2 {
+  text-align:           left;
+  font-weight:          bold;
+  padding:              5px 5px 5px 15px;
+  font-size:            12px;
+  margin:               -7px;
+  background-color:     #c00;
+  color:                #fff;
+}
+
+#errorExplanation p {
+  color:                #333;
+  margin-bottom:        0;
+  padding:              5px;
+}
+
+#errorExplanation ul li {
+  font-size:            12px;
+  list-style:           square;
+}
+
+.fieldWithErrors {
+  display:              table;
+  background-color:     red;
+  padding:              2px;
+}
+
+/************************************************************************/
+/*                       Standard Content Syles                         */
+/************************************************************************/
+
+/* Styles for main page */
+body {
+    width:              1010px;
+    background:         #bbb;
+}
+
+/* Main Content Headers */
+h1 {
+    font:               22pt 'Georgia', serif;
+    color:              #22b;
+    border-bottom:      1px solid #77d;
+}
+
+/* Content Sub-Headers */
+h2 {
+    font:               16pt 'Georgia', serif;
+    color:              #22b;
+    border-bottom:      1px solid #77d;
+    width:              20em;
+}
+
+/* Content Sections */
+h3 {
+    font:               12pt 'Times Roman', serif;
+    color:              #22b;
+    display:            inline;
+    width:              20em;
+}
+
+
+/* Display Table */
+table.std_list {
+    width:              100%;
+    text-align:         left;
+}
+
+table.std_list th {
+    border-bottom:      1px solid #000;
+}
+
+table.std_list tr.odd-line {
+    /*background:         #fff;*/
+}
+
+table.std_list tr.even-line {
+    background:         #ccc;
+}
+
+table.std_list tr.hilite {
+    background:         #fdd;
+}
+
+table.std_list tr td {
+    /*font:               normal normal 10pt 'Ariel', sans-serif;*/
+    font:               10pt sans-serif;
+}
+
+
+/* Composite table cell styles */
+th.amount, td.amount, input.amount {
+    text-align:         right;
+}
+
+
+/* Forms */
+td.label {
+    font:               normal bold 12pt 'Times Roman', serif;
+}
+
+td.value {
+    font:               normal normal 10pt 'Ariel', sans-serif;
+}
+
+
+/* Used for edit links to the right of headings */
+span.hover_link {
+    font:               normal 8pt Ariel, sans-serif;
+    color:              #22b;
+    cursor:             pointer;
+}
+
+span.add_link {
+    color:              #292;
+}
+
+
+/* For printing invoices */
+p.inv_header {
+    text-align:         center;
+}
+
+p.inv_addr {
+    text-align:         left;
+}
+
+p.inv_intro {
+    text-align:         center;
+    width:              35em;
+    border:             1px solid #000;
+}
+
+
+/* Formatting invoices */
+span.item_name {
+    width:              15em;
+}
+
+span.amount {
+    width:              4em;
+}
+
+span.actions {
+    width:              4em;
+}
+
+/************************************************************************/
+/*                           Special Styles                             */
+/************************************************************************/
+
+/* Used for dynamic popups */
+/*
+div.popup {
+    position:           relative;
+    z-index:            0;
+    display:            none;
+}
+*/
+
+
+/* Printing */
+@media print {
+    /* Eliminate the header, footer, menu, and main borders */
+    #banner {
+        display:        none;
+        background:     #337;
+    }
+
+    #sidebar {
+        display:        none;
+    }
+
+    #main {
+        border:             0;
+    }
+
+    #footer {
+        display:        none;
+    }
+}

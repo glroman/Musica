@@ -1,0 +1,4 @@
+pre
+  - %i(app_file bind environment handler_name reload_templates \\
+       views server sessions).each do |w|
+         = "%15s: %s.\n" % [w, settings.send(w)] if w != '\\'.to_sym
