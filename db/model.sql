@@ -66,7 +66,7 @@ DROP   TABLE IF EXISTS USER_ALBUM;
 CREATE TABLE           USER_ALBUM
 (
     user_id     integer         NOT NULL,
-    album_id    int             NOT NULL
+    album_id    integer         NOT NULL
 );
 
 DROP    INDEX IF EXISTS USER_ALBUM_IDX_US_ALB;

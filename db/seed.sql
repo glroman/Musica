@@ -2,8 +2,14 @@
     Test data for the Recordly app.
 */
 
-INSERT  INTO USER (login)
-VALUES  ('george');
+INSERT  INTO USER (login, passwd)
+VALUES  ('george',
+         "$2a$10$V/3bBbctmvfNnhXN06kogOpM1hwzgLkYQ.0jg0LefETMysoS4tIkS");
+
+-- guest/recordly
+INSERT  INTO USER (login, passwd)
+VALUES  ('guest',
+         "$2a$10$HOl21y4jjyCTfuL23DhNO.H7MOEhWYGyLFOhuLmCMDTKct7NsJPAm");
 
 -------------
 
@@ -60,5 +66,5 @@ SELECT  u.id,
         a.id
 FROM    USER        u
 JOIN    ALBUM       a   ON  a.title     = 'Zooropa'
-WHERE   u.login     = 'george';
+WHERE   u.login     IN ('george', 'guest');
 

@@ -3,10 +3,12 @@ require 'sinatra/flash'
 require 'slim'
 require 'sequel'
 require 'sqlite3'
-require 'bcrypt'
 
 require_relative 'lib/authentication'
 require_relative 'lib/user'
+require_relative 'lib/artist'
+require_relative 'lib/album'
+require_relative 'lib/user_album'
 
 set :bind, '0.0.0.0'
 
@@ -48,9 +50,6 @@ end
 @title      = 'Title Here!'     # Page (tab) Title
 @header     = 'Page Header!'    # Page (h1) Header
 
-@user       = nil
-@login_at   = nil
-
 #############
 
 get '/' do
@@ -58,6 +57,9 @@ get '/' do
 
   @title    = 'Recordly'
   @header   = 'Main'
+
+  @artists  = Artist.list(session[:user].name)
+  @albums   = Album. list(session[:user].name)
   slim :index
 end
 
@@ -86,7 +88,7 @@ post '/login' do
 end
 
 get '/logout' do
-  session[:user]    = login
+  session[:user]    = nil
   flash[:notice]    = 'You are now logged out'
   redirect '/login'
 end
@@ -139,11 +141,58 @@ end
 
 #############
 
+get '/new_album' do
+  authenticate!
+
+  @title    = 'Rec: Add a CD/Album'
+  @header   = 'Add a CD/Album'
+  slim :new_album
+end
+
+post '/new_album' do
+  authenticate!
+
+  user          = session[:user]
+  artist_name   = params[:artist].strip
+  album_title   = params[:title ].strip
+
+  if !artist = Artist.fetch( artist_name)
+    artist   = Artist.create(artist_name)
+  end
+
+  if !artist
+    flash[:notice]    = 'Error creating artist'
+    redirect '/new_album'
+  end
+
+  if !album = Album.fetch( album_title, artist.id)
+    album   = Album.create(album_title, artist.id)
+  end
+
+  if !album
+    flash[:notice]    = 'Error creating album'
+    redirect '/new_album'
+  end
+
+  if UserAlbum.fetch(album.id, user.id)
+    flash[:notice]    = 'That album is already in your collection!'
+    redirect '/new_album'
+  end
+
+  if !UserAlbum.create(album.id, user.id)
+    flash[:notice]    = 'Error adding that album to your collection'
+    redirect '/new_album'
+  end
+
+  flash[:notice]    = 'New album created'
+  redirect '/'
+end
+
 get '/album_details' do
   authenticate!
 
-  @title    = 'Rec: CDs'
-  @header   = 'Your CD Collection'
+  @title    = 'Rec: Details'
+  @header   = 'CD/Album Details'
   slim :album_details
 end
 

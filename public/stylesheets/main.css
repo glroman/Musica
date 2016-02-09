@@ -14,68 +14,28 @@
     margin:             0;
 }
 
-#banner img {
-    float:              left;
-    margin:             0 4px;
-    border:             0;
-}
-
-
-/*
-#layout
-{
-    border-collapse:    collapse;
-    background:         #ffc;
-    width:              100%;
-    padding:            0;
-}
-*/
-
-
-#sidebar {
-    text-align:         center;
-    vertical-align:     top;
-    background:         #bbb;
-    width:              13%;
-    height:             100%;
-    /*height:             5em;*/
-    /*border:             2px solid red;*/
-    float:              left;
-    /*display:            inline;*/
-    margin:             0;
-    padding:            0;
-}
-
-#sidebar a {
-    font:               11pt sans-serif;
-    color:              #063;
-}
-
-#sidebar ul {
-    text-align:         left;
-    list-style-type:    none;
-    padding:            0;
-    margin:             0;
-}
-
 #main {
-    float:              left;
+    /*float:              left;*/
     width:              85%;
-    padding:            0 0 1em 1em;
+    text-align:         center;
+    padding:            1em;
     border:             0;
     /*border:             1px solid red;*/
-    border-left:        4px solid #008;
-    margin:             0;
+    border:		4px solid #008;
+    margin:             0 auto;
     background:         #ffc;
 }
 
 
 #footer {
+    width:              70%;
     text-align:         center;
     clear:              both;
     background:         #eee;
-    border-top:         4px solid #008;
+    border:		4px solid #ddd;
+    /*border-top:         4px solid #008;*/
     font:               normal smaller sans-serif;
+    margin:             0 auto;
 }
 
 #notice {
@@ -84,42 +44,6 @@
     border:             2px solid red;
     padding:            1em;
     margin-bottom:      2em;
-}
-
-#errorExplanation {
-  width:                400px;
-  border:               2px solid red;
-  padding:              7px;
-  padding-bottom:       12px;
-  margin-bottom:        20px;
-  background-color:     #eee;
-}
-
-#errorExplanation h2 {
-  text-align:           left;
-  font-weight:          bold;
-  padding:              5px 5px 5px 15px;
-  font-size:            12px;
-  margin:               -7px;
-  background-color:     #c00;
-  color:                #fff;
-}
-
-#errorExplanation p {
-  color:                #333;
-  margin-bottom:        0;
-  padding:              5px;
-}
-
-#errorExplanation ul li {
-  font-size:            12px;
-  list-style:           square;
-}
-
-.fieldWithErrors {
-  display:              table;
-  background-color:     red;
-  padding:              2px;
 }
 
 /************************************************************************/
@@ -184,12 +108,6 @@ table.std_list tr td {
 }
 
 
-/* Composite table cell styles */
-th.amount, td.amount, input.amount {
-    text-align:         right;
-}
-
-
 /* Forms */
 td.label {
     font:               normal bold 12pt 'Times Roman', serif;
@@ -200,78 +118,11 @@ td.value {
 }
 
 
-/* Used for edit links to the right of headings */
-span.hover_link {
-    font:               normal 8pt Ariel, sans-serif;
-    color:              #22b;
-    cursor:             pointer;
-}
-
-span.add_link {
-    color:              #292;
-}
-
-
-/* For printing invoices */
-p.inv_header {
+ul.menu li {
     text-align:         center;
-}
-
-p.inv_addr {
-    text-align:         left;
-}
-
-p.inv_intro {
-    text-align:         center;
-    width:              35em;
-    border:             1px solid #000;
-}
-
-
-/* Formatting invoices */
-span.item_name {
-    width:              15em;
-}
-
-span.amount {
-    width:              4em;
-}
-
-span.actions {
-    width:              4em;
-}
-
-/************************************************************************/
-/*                           Special Styles                             */
-/************************************************************************/
-
-/* Used for dynamic popups */
-/*
-div.popup {
-    position:           relative;
-    z-index:            0;
-    display:            none;
-}
-*/
-
-
-/* Printing */
-@media print {
-    /* Eliminate the header, footer, menu, and main borders */
-    #banner {
-        display:        none;
-        background:     #337;
-    }
-
-    #sidebar {
-        display:        none;
-    }
-
-    #main {
-        border:             0;
-    }
-
-    #footer {
-        display:        none;
-    }
+    list-style-type:    none;
+    padding:            0.5em;
+    margin:             0;
+    display:            inline;
+    border:		1px solid #000;
 }

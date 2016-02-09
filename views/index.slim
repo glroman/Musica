@@ -1,4 +1,20 @@
-h3 Artists
+h4 My CDs / Albums
 
-h3 Albums / CDs
+table.std_list
+  thead
+    th ALBUM
+    th ARTIST
+  - @albums.each do |a|
+    tr
+      td = a[:title]
+      td = a[:name]
+
+h4 My Artists
+
+table.std_list
+  thead
+    th ARTIST
+  - @artists.each do |a|
+    tr
+      td = a[:name]
 

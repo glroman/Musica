@@ -1,9 +1,9 @@
 # Recordly
+
 Music Database
 
-Requirements:
-
-Recordly
+Requirements
+------------
 
 Recordly will be an application that allows for users to input and store
 their record collection.  When complete, the user should be able to view
@@ -35,3 +35,39 @@ application so that we can see the various portions working.
 
 Please use git as you would if you were working on this in a
 professional environment.
+
+STATUS -- 09 Feb 2016
+---------------------
+
+The following functionality has been written:
+
+* Database schema (for entire application)
+* User authentication
+* New user registration
+* Adding albums and corresponding artists
+* Listing current albums and artists in the user's collection
+* Detection of duplicate:
+  * Logins
+  * (Artist, Album) pairs already added to a user's collection
+* Seed data to add two test users and an album to the database.
+
+To test the current system, login as "guest/recordly" or register a new
+user.
+
+The following functionality still need to be written:
+
+* Adding songs to an album
+* Listing out the details for a single album
+* Adding artists, albums, or songs as favorites
+* Search through artists, albums, and songs
+* Updating Arists, Albums, and Songs (to correct spelling errors)
+* Test scripts to automate testing of user functionality
+
+
+Components
+----------
+
+* Sqlite3
+* Sequel
+* Sinatra
+* Slim
