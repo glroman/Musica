@@ -1,0 +1,34 @@
+fieldset
+  legend Add an Album
+
+  form(action = '/new_album' method = 'post')
+    table
+      tr
+        td.label
+
+          label#lb-user-name(for = 'artist')  Artist:
+
+        td.value
+          input#artist(name       = 'artist'
+                       type       = 'text'
+                       autofocus
+                       size       = 60
+                       maxlength  = 60
+                      )
+
+      tr
+        td.label
+          label#lb-user-name(for = 'title')  Title:
+
+        td.value
+          input#title(name       = 'title'
+                      type       = 'text'
+                      size       = 60
+                      maxlength  = 60
+                     )
+      tr
+        td(colspan=2)
+          br
+          input(value = 'Add Album'
+                type  = 'submit'
+               )
