@@ -1,11 +1,11 @@
-# Recordly
+# Musica
 
 Music Database
 
 Requirements
 ------------
 
-Recordly will be an application that allows for users to input and store
+Musica will be an application that allows for users to input and store
 their record collection.  When complete, the user should be able to view
 their record collection, view a list of their "favorite" albums and/or
 songs, etc.  Duplicate albums/songs should not be allowed.  They should
